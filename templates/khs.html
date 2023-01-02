@@ -14,7 +14,7 @@
     <div class="container-navbar fixed-top">
     <nav class="navbar navbar-expand-lg bg mb-3 shadow fixed-top">
       <div class="container">
-        <img src="{{url_for('static', filename='3.png')}}" alt="Logo"  class="d-inline-block align-text-top img-navbar" />
+        <a href="/"><img src="{{url_for('static', filename='3.png')}}" alt="Logo"  class="d-inline-block align-text-top img-navbar" /></a>
 
         <div class="collapse navbar-collapse font-nav" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -42,14 +42,14 @@
               {% if request.method == 'GET' %}
               {% for ketemu in cari %}
               <option value="{{ ketemu[0] }}" >
-                {{ketemu[1]}}
+                {{ketemu[0]}}
               </option>
               {% endfor %} 
                                       
               {% else %}
               {% for ketemu in data.cari %}
               <option value="{{ ketemu[0] }}" >
-                {{ketemu[1]}}
+                {{ketemu[0]}}
               </option>
               {% endfor %}                                   
               {% endif %}                                   
@@ -64,8 +64,6 @@
     <br><br><br>
 
     <!-- content -->
-
-
     <div class="container-list">
       <div class="container mt-4 mb-6 shadow-sm p-3 bg-body rounded shadow-lg">
         <div class="container text-center">
@@ -112,9 +110,15 @@
                   <div class="col-1">
                     Prodi
                   </div>
+                  
                   <div class="col-7 text-sm-start">
-                    : {{data.jurusan[1]}}
+                    : {% if data.mhs[1] == 'P001' %}
+                        Teknik Informatika
+                      {% else %}
+                        Sistem Informasi
+                      {% endif %}
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -252,7 +256,13 @@
                   <h6>Anjani, 13 Desember 2022</h6>
                   <h6>Ketua Program Studi,</h6>
                   <br><br><br>
-                  <h6>{{ data.jurusan[2] }}</h6>
+                  <h6>
+                    {% if data.mhs[1] == 'P001' %}
+                      LL Puji Indra Khasisma, S.Kom., M.Cs.
+                    {% else %}
+                      Puspita, S.Kom.,M.Cs.
+                    {% endif %}
+                  </h6>
                 </div>
               </div>
             </div>

@@ -437,14 +437,11 @@ def khs():
         mhs=cursor.fetchone()
         cursor.execute(f"SELECT nim,nama_mahasiswa FROM tb_mahasiswa")
         mh=cursor.fetchall() 
-        cursor.execute(f"SELECT * FROM tb_jurusan")
-        jurusan=cursor.fetchone() 
 
         context = {
              'cari' : mh,
              'data' : khs,
-             'mhs' :mhs,
-             'jurusan':jurusan
+             'mhs' :mhs
         }
         return render_template('khs.html', data=context)
     

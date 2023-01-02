@@ -47,7 +47,7 @@ body {
 
 /* konten */
 .banner {
-  background: linear-gradient(18deg, rgba(46, 99, 85, 0.6755077030812324) 0%, rgba(100, 102, 102, 0.68) 100%), url("kampus1.jpeg") no-repeat center center;
+  background: linear-gradient(18deg, rgba(46, 99, 85, 0.6755077030812324) 0%, rgba(100, 102, 102, 0.68) 100%), url("stmik.png") no-repeat center center;
   background-size: cover;
   background-position: bottom;
   padding-top: 20%;
